@@ -16,11 +16,11 @@ public class Circle
 
 	public void calculateArea( )
 	{
-		area = 
+		area = (3.14159 * radius * radius);
 	}
 
 	public void print( )
 	{
-		System.out.println(");
+		System.out.printf("The area is :: %.4f\n",area);
 	}
 }
