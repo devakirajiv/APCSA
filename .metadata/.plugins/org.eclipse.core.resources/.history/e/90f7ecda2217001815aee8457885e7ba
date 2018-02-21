@@ -22,7 +22,7 @@ public class GuessingGame
 	public void playGame()
 	{
 		Random rand = new Random();
-		int randans = rand.nextInt(upperBound+1) + 1;
+		int randans = rand.nextInt(6) + 1;
 		
 		Scanner keyboard = new Scanner(System.in);
 		out.print("Guessing game - how many numbers? ");
@@ -47,6 +47,7 @@ public class GuessingGame
 			out.println("You guessed wrong " + ((((double)runnumber-1)/((double)runnumber))*100) + " percent of the time.");
 		}
 			
+			
 		
 
 		
@@ -55,9 +56,9 @@ public class GuessingGame
 	
 	}
 
-	//public String toString()
-//	{
-		
-		
-	//}
+	public String toString()
+	{
+		String output="";
+		return output;
+	}
 }

@@ -17,27 +17,20 @@ public class TriangleThree
 		letter = "";
 	}
 
-	public TriangleThree(int sz, String let)
+	public TriangleThree(int count, String let)
 	{
-		setTriangle(sz, let);
+		size = count;
+		letter = let;
 	}
 
-	public void setTriangle(int sz, String let )
+	public void setTriangle( String let, int sz )
 	{
-		for (int i = 1; i <= sz; i++)
-		{
-			for (int c = 1; c <= i; c++)
-				System.out.print(let);
-			System.out.println();
-		}
-		
-		
 	}
 
-	//public String getLetter()
-	//{
-		//return letter;
-	//}
+	public String getLetter()
+	{
+		return "#";
+	}
 
 	public String toString()
 	{

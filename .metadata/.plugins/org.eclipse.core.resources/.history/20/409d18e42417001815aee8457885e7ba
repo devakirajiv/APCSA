@@ -22,7 +22,7 @@ public class GuessingGame
 	public void playGame()
 	{
 		Random rand = new Random();
-		int randans = rand.nextInt(upperBound+1) + 1;
+		int randans = rand.nextInt(6) + 1;
 		
 		Scanner keyboard = new Scanner(System.in);
 		out.print("Guessing game - how many numbers? ");
