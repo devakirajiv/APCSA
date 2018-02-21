@@ -44,7 +44,6 @@ public class GuessingGame
 		if (response == randans)
 		{
 			out.println("It took " + (runnumber+1) + " guesses to guess " + randans);
-			out.println("You guessed wrong " + ((((double)runnumber-1)/((double)runnumber))*100) + " percent of the time.");
 		}
 			
 			
