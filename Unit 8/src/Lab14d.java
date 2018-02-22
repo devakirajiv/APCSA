@@ -4,15 +4,13 @@
 //Class -
 //Lab  -
 
-import static java.lang.System.*;
-
-public class Lab09f
+public class Lab14d
 {
 	public static void main( String args[] )
 	{
 		//add test cases
 		
 		
-											
+		
 	}
 }
