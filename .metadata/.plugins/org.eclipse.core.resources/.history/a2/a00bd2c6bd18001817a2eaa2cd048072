@@ -14,7 +14,7 @@ public class Lab14d
 		
 		Grades test = new Grades();
 		
-		double[] nums = {100,90,85,72.5,95.6};
+		double[] nums = {50,100,80};
 		test.setGrades(nums);
 		out.println(test);
 		

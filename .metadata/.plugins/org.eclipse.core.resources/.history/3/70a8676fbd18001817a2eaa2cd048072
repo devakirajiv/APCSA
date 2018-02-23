@@ -60,14 +60,13 @@ public class Grades
 
 	public String toString()
 	{
-		String output = null;
+		String output;
 		for (int i = 0; i < grades.length; i++)
 		{
-			output = ("grade " + i + ":: " + grades[i]);
-			System.out.println(output);
+			output = ("grade " + i + ":: " + grades[i]);			
 		}
 		
-		output += "\nsum= " + getSum() + "\n";
+		output += "sum= " + getSum() + "\n";
 		output += "average= " + getAverage() + "\n";
 		return output;
 		 

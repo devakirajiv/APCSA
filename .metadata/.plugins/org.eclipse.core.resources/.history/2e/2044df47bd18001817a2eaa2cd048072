@@ -1,0 +1,55 @@
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name -
+//Date -
+//Class -
+//Lab  -
+
+import java.lang.System;
+import java.lang.Math;
+import java.util.Scanner;
+
+public class Grades
+{
+	private int[] grades = new int[5];
+	//instance variables
+	
+	
+
+	//constructor
+	public Grades()
+	{
+		int[] grades = {80,85,79,92,97};
+	}
+
+
+
+	//set method
+
+
+
+	private double getSum()
+	{
+		double sum=0.0;
+		sum = grades[0] + grades[1] + grades[2] + grades[3] + grades[4] + grades[5];
+
+		return sum;
+	}
+
+	public double getAverage()
+	{
+		double average=0.0;
+		
+		average = (grades[0] + grades[1] + grades[2] + grades[3] + grades[4] + grades[5])/(grades.length);
+
+		return average;
+	}
+
+
+	public String toString()
+	{
+		return "grade 0 :: " + grades[0] + "\ngrade 1 :: " + grades[1] +"\ngrade 2 :: " + grades[2] + "\ngrade 3 :: " + grades[3] + "\ngrade 4 :: " + grades[4] + "\nsum :: " + getSum() + "\naverage :: " + getAverage();
+	}
+
+
+
+}
