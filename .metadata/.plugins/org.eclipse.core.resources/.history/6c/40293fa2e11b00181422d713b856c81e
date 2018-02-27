@@ -74,8 +74,10 @@ public class Card {
 	 */
 	public boolean matches(Card otherCard) {
 		if((suit.equals(otherCard.suit())) && (rank.equals(otherCard.rank())) && (pointValue == otherCard.pointValue())){
+			System.out.println("There is a match with :: " + otherCard);
 			return true;
 		} else {
+			System.out.println("There is no match.");
 			return false;
 		
 		}	/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */

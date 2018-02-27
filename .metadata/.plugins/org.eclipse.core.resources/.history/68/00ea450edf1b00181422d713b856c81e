@@ -30,9 +30,6 @@ public class Deck {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
-		
-		cards = new Card[ranks.length*suits.length;
-		System.out.print
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 	}
 
@@ -58,12 +55,6 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-			for (int k = cards.length - 1; k > 0; k-- {
-					int howMany = k + 1;
-					int start = 0;
-					int randPos = 
-	
-			}
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
 	}
 
@@ -73,7 +64,6 @@ public class Deck {
 	 *         previously dealt.
 	 */
 	public Card deal() {
-			if isEmpty()
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 	}
 
