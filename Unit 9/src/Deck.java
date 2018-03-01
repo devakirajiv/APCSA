@@ -32,13 +32,16 @@ public class Deck {
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		
-		Card[] cards = new Card[ranks.length*suits.length];
+		cards = new Card[ranks.length*suits.length];
 		int i = 0;
 		
-		for(int j = 0; j < ranks.length; j++){
-			for(int k = 0; k < suits.length; k++){
-				Card Acard = new Card(ranks[j], suits[k], values[j]);
+		for(int j = 0; j < suits.length; j++)
+		{
+			for(int k = 0; k < ranks.length; k++)
+			{
+				Card Acard = new Card(ranks[k], suits[j], values[k]);
 				cards[i] = Acard;
+				System.out.println(cards[i]);
 				i++;
 			}
 		}
