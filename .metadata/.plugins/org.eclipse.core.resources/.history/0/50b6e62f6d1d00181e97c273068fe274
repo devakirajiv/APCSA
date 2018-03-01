@@ -8,6 +8,9 @@ import java.util.ArrayList;
  */
 public class Deck {
 	
+	private final static String[] RANK = {"King, Four, Queen"};
+	private final static String[] SUIT = {"Heart, Spade, Diamond"};
+	private final static int[] POINTVALUE = {13, 4, 12};
 
 	/**
 	 * cards contains all the cards in the deck.
