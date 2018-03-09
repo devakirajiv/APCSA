@@ -54,7 +54,7 @@ public class MadLib
 	{
 		String s = "";
 		try{
-		Scanner file = new Scanner(new File("H:\\APCS\\Unit10\\Unit10-2016\\Unit10-Assignments\\Lab16d\\nouns.dat"));
+		Scanner file = new Scanner(new File("H:\\APCS\\Unit10\\Unit10-2016\\Unit10-Assignments\\Lab16e\\nouns.dat"));
 		while (file.hasNextLine())
 			{
 			
@@ -75,7 +75,7 @@ public class MadLib
 	{
 		String s = "";
 		try{
-			Scanner file = new Scanner(new File("H:\\APCS\\Unit10\\Unit10-2016\\Unit10-Assignments\\Lab16d\\verbs.dat"));
+			Scanner file = new Scanner(new File("H:\\APCS\\Unit10\\Unit10-2016\\Unit10-Assignments\\Lab16e\\verbs.dat"));
 			while (file.hasNextLine())
 				{
 					
@@ -102,7 +102,7 @@ public class MadLib
 		String s = "";
 		try{
 	
-			Scanner file = new Scanner(new File("H:\\APCS\\Unit10\\Unit10-2016\\Unit10-Assignments\\Lab16d\\adjectives.dat"));
+			Scanner file = new Scanner(new File("H:\\APCS\\Unit10\\Unit10-2016\\Unit10-Assignments\\Lab16e\\adjectives.dat"));
 			while (file.hasNextLine())
 				{
 
