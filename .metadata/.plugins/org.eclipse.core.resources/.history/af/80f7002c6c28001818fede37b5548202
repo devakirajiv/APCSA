@@ -21,19 +21,9 @@ public class GradeBookFileRunner
 		
 		for(int i = 0; i<numStudents; i++){
 			String studentName =  file.nextLine();
-			String gradeList = file.nextLine();
-			class1.addStudent(i,new Student(studentName,gradeList));
+			String studentGrades = file.nextLine();
+			class1.addStudent(i,new Student(studentName,studentGrades));
 		}
-		
-		System.out.println(class1);
-		
-		System.out.println("Failure List = " + class1.getFailureList(70));
-		System.out.println("Highest Average = " + class1.getStudentWithHighestAverage());
-		System.out.println("Lowest Average = " + class1.getStudentWithLowestAverage());
-		
-		
-		
-		out.println(String.format("Class Average = %.2f",class1.getClassAverage()));	
 
 
 

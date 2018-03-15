@@ -1,19 +1,11 @@
-//© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date -
-//Class -
-//Lab  -
-
 import java.util.Arrays;
 import java.util.Scanner;
 import static java.lang.System.*;
 import static java.util.Arrays.*;
-import java.util.ArrayList;
 
 public class Grades
 {
-	//private double[] grades;
-	private ArrayList<Double> grades;
+	private double[] grades;
 	
 	public Grades()
 	{
@@ -30,12 +22,10 @@ public class Grades
 		String[] split = gradeList.split(" ");
 		int length = Integer.parseInt(split[0]);
 		
-		//grades = new double[length];
-		grades = new ArrayList<Double>();
+		grades = new double[length];
 		
 		for (int i = 2; i<split.length; i++){
-			//grades[i-2] = Double.parseDouble(split[i]);
-			grades.add(Double.parseDouble(split[i]));
+			grades[i-2] = Double.parseDouble(split[i]);
 		}
 
 
@@ -45,8 +35,7 @@ public class Grades
 	
 	public void setGrade(int spot, double grade)
 	{
-		//grades[spot] = grade;
-		grades.add(spot,grade);
+		grades[spot] = grade;
 
 
 
@@ -56,9 +45,8 @@ public class Grades
 	{
 		double sum=0.0;
 		
-		for (int i = 0; i < grades.size(); i++){
-			//sum += grades[i];
-			sum += grades.get(i);
+		for (int i = 0; i < grades.length; i++){
+			sum += grades[i];
 		}
 
 
@@ -68,9 +56,9 @@ public class Grades
 	public double getLowGrade()
 	{
 		double low = Double.MAX_VALUE;
-		for (int i = 0; i < grades.size(); i++) {
-			if(grades.get(i) < low){
-				low = grades.get(i);
+		for (int i = 0; i < grades.length; i++) {
+			if(grades[i] < low){
+				low = grades[i];
 			}
 		}
 
@@ -80,9 +68,9 @@ public class Grades
 	public double getHighGrade()
 	{
 		double high = Double.MIN_VALUE;
-		for (int i = 0; i < grades.size(); i++){
-			if(grades.get(i) > high) {
-				high = grades.get(i);
+		for (int i = 0; i < grades.length; i++){
+			if(grades[i] > high) {
+				high = grades[i];
 			}
 		}
 
@@ -91,18 +79,19 @@ public class Grades
 	
 	public int getNumGrades()
 	{
-		return grades.size();
+		return grades.length;
 	}
 	
 	public String toString()
 	{
 		String output="";
 		
-		for(int i = 0; i < grades.size(); i++){
-			output += grades.get(i) + " ";
+		for(int i = 0; i < grades.length; i++){
+			output += grades[i] + " ";
 		}
 
 
 		return output;
 	}	
 }
+
