@@ -4,7 +4,7 @@ import java.util.Scanner;
 import static java.lang.System.*;
 import static java.util.Arrays.*;
 
-public class Student implements Comparable<Student>
+public class Student
 {
 	private String myName;
 	private Grades myGrades;

@@ -33,15 +33,6 @@ public class Class
 	   return name;	
 	}
 	
-	public void sort(){
-		//for(int i = 0; i < studentList.length-1; i++){
-		
-		//studentList[i].(getAverage().compareTo(studentList[i+1]));
-		Arrays.sort(studentList);
-		//}
-		//return studentList;
-	}
-	
 	public double getClassAverage()
 	{
 		double classAverage=0.0;
@@ -87,7 +78,7 @@ public class Class
 		}
 		return hName;
 	}
-	
+
 	public String getStudentWithLowestAverage()
 	{
 		double low = Double.MAX_VALUE;
