@@ -27,20 +27,21 @@ public class Lab18d
 			for(int i = 0; i < size; i++){
 				//words.add(file.nextLine());
 				Word word = new Word(file.nextLine());
-				words.add(word);
 			}
 		}
 		
 		for(int i = 0; i < size - 1; i++){
 			for(int j = 0; j < size - 1; j++){
-			
+				//System.out.println(words.get(j));
+				//System.out.println(words.get(j+1));
 				if(words.get(j).compareTo(words.get(j+1)) > 0){
+					System.out.println("swapping");
 					Word temp = words.get(j);
 					words.set(j, words.get(j+1));
 					words.set(j+1, temp);
 				  
 				}
-				
+				System.out.println(words);
 			}
 			
 			

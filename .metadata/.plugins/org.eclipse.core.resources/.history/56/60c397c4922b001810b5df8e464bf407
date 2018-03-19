@@ -22,6 +22,7 @@ public class Word implements Comparable<Word>
 		int length1 = word.length();
 		int length2 = rhs.toString().length();
 		
+		System.out.println(length1 + " " + length2);
 		
 		if(length1 > length2)
 			return 1;
