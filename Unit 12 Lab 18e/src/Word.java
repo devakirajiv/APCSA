@@ -21,7 +21,7 @@ public class Word implements Comparable<Word>
 		int vowelCount=0;
 		
 		for(int i = 0; i < word.length(); i++)
-			if(vowels.indexOf(word.charAt(i)) > 0) {
+			if(vowels.indexOf(word.charAt(i)) >= 0) {
 				vowelCount++;
 			}
 
@@ -30,18 +30,19 @@ public class Word implements Comparable<Word>
 
 	public int compareTo(Word rhs)
 	{
-		if(numVowels() == rhs.numVowels()){
-			if(word.compareTo(rhs.word) == 0)
-				return 0;
-			else if(word.compareTo(rhs.word) >= 1)
-				return 1;
-			else if(word.compareTo(rhs.word) <= -1)
-				return -1;
+		if(this.numVowels() == rhs.numVowels()){
+			//if(word.compareTo(rhs.word) == 0)
+				//return 0;
+			//else if(word.compareTo(rhs.word) >= 1)
+				//return 1;
+		//	else if(word.compareTo(rhs.word) <= -1)
+			//	return -1;
+			return (word.compareTo(rhs.word));
 		}
 		
-		if(numVowels() >= rhs.numVowels())
+		if(this.numVowels() >= rhs.numVowels())
 			return 1;
-		if(numVowels() <= rhs.numVowels())
+		if(this.numVowels() <= rhs.numVowels())
 			return -1;
 		
 	return -1;
