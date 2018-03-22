@@ -13,5 +13,7 @@ public class Lab21i
 {
 	public static void main( String args[] ) throws IOException
 	{
+		Scanner file = new Scanner(new File("H:\\APCS\\Unit14-2016\\Unit14-2016\\Unit14-Assignments\\lab21i.dat"));
+		
 	}
 }

@@ -12,6 +12,7 @@ import static java.lang.System.*;
 public class Maze
 {
    private int[][] maze;
+   private boolean exitFound;
 
 	public Maze()
 	{
@@ -25,11 +26,19 @@ public class Maze
 
 	}
 
-	public boolean hasExitPath(int r, int c)
+	public void hasExitPath(int r, int c)
 	{
+		if( r < maze.length && r >= 0 && c < maze.length && c >= 0 && maze[r][c] == 1){
+			if( c==maze.length-1){
+				maze[r][c] = 9;
+			}
+			if((r))
+		}
 
-		return false;
+		
 	}
+	
+	
 
 	public String toString()
 	{
