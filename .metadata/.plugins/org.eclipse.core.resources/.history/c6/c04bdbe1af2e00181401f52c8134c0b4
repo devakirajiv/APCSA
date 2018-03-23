@@ -169,28 +169,23 @@ public class ElevensBoard extends Board {
    // }
     
     private boolean containsFaceDouble(List<Integer> selectedCards) {
-        boolean DoubleJack = false;
-        boolean DoubleQueen = false;
-        boolean DoubleKing = false;
+        boolean hasJack = false;
+        boolean hasQueen = false;
+        boolean hasKing = false;
         if (selectedCards.size() < 2) {
             return false;
         }
-        for (int i = 0; i < selectedCards.size() - 1; i++) {
-            if ((cardAt(selectedCards.get(i)).rank() == "jack") && (cardAt(selectedCards.get(i + 1)).rank() == "jack")) {
-                DoubleJack = true;
+        for (int i = 0; i < selectedCards.size(); i++) {
+            if (cardAt(selectedCards.get(i)).rank() == "jack") {
+                hasJack = true;
             }
-            else if ((cardAt(selectedCards.get(i)).rank() == "queen") && (cardAt(selectedCards.get(i + 1)).rank() == "queen")) {
-                DoubleQueen = true;
+            else if (cardAt(selectedCards.get(i)).rank() == "queen") {
+                hasQueen = true;
             }
-            else if ((cardAt(selectedCards.get(i)).rank() == "king") && (cardAt(selectedCards.get(i + 1)).rank() == "king")) {
-                DoubleKing = true;
+            else if (cardAt(selectedCards.get(i)).rank() == "king") {
+                hasKing = true;
             }
         }
-        if(DoubleJack) return DoubleJack;      
-        if(DoubleQueen) return DoubleQueen;
-        if(DoubleKing) return DoubleKing;
-        
-        return false;
+        return (hasJack && hasQueen && hasKing);
     }
-    
 }
