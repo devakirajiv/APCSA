@@ -23,7 +23,7 @@ public class FancyWord
 	   
 	   for(int r = 0; r < s.length(); r++){
 		   for(int c = 0; c < s.length(); c++){
-			   if(r == 0 || (r == s.length()-1)){
+			   if(r == 0 || r == s.length()){
 				   mat[r][c] = s.charAt(c);
 			   }
 			   
