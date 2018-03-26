@@ -7,13 +7,18 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+
 import static java.lang.System.*;
 
 public class Lab21i
 {
-	public static void main( String args[] ) throws IOException
+	public static void main( String args[] ) throws Exception
 	{
-		Scanner file = new Scanner(new File("H:\\APCS\\Unit14-2016\\Unit14-2016\\Unit14-Assignments\\lab21i.dat"));
 		
+		
+		Maze test = new Maze();
+		test.testing();
 	}
 }
+
+

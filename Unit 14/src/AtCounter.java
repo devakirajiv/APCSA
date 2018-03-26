@@ -10,6 +10,9 @@ public class AtCounter
 {
    private char[][] atMat;
    private int atCount;
+   private int row;
+   private int col;
+  
  
 
 	public AtCounter()
@@ -25,10 +28,15 @@ public class AtCounter
 									{'-','@','@','@','-','@','-','-','-','-'},
 									{'-','@','-','@','-','@','-','@','@','@'},
 									{'-','@','@','@','@','@','-','@','@','@'}};
+	
+		
 	}
 
 	public int countAts(int r, int c)
 	{
+		row = r;
+		col = c;
+
 
 		//add in recursive code to count up the # of @s connected
 		//start checking at spot [r,c]
@@ -48,11 +56,13 @@ public class AtCounter
 	{
 		return atCount;
 	}
+	
+	
 
 	public String toString()
 	{
 		String output="";
-		output=  getAtCount()+" @s connected.";
+		output=  "has " + getAtCount()+" @s connected.";
 		return output;
 	}
 }
