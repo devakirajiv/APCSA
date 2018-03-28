@@ -21,7 +21,7 @@ public class FancyWords
 
 	public void setWords(String sentence)
 	{
-
+		
 	}
 
 	public String toString()
@@ -37,10 +37,15 @@ public class FancyWords
 		}
 		System.out.println("wordRay after reversing characters" + Arrays.toString(wordRay));
 		Collections.reverse(Arrays.asList(wordRay));
+		
 		for(int r = 0; r < max; r++){
+			
 			for(int c = 0; c < wordRay.length; c++){
+				
 				if(r<wordRay[c].length()){
-					output +=wordRay[c].length();
+					
+					output +=wordRay[c].charAt(r);
+				
 				}
 			}
 		}

@@ -16,11 +16,17 @@ public class Lab15d
 	public static void main( String args[] ) throws IOException
 	{
 		
-		Scanner file = new Scanner(new File("H:\\APCS\\Unit14_2016\\Unit14_2016\\Unit14-Assignments\\lab21i.dat"));
+		Scanner file = new Scanner(new File("H:\\APCS\\Unit13-2016\\Unit13-2016\\Unit13-Assignments\\lab15d.dat"));
+		int size = file.nextInt();
+		file.nextLine();
+		for(int i = 0; i < size; i++){
+			String words = file.nextLine();
+			FancyWords test = new FancyWords(words);
+			System.out.println(test);
+		}
 		
 		
 		
-		FancyWords test = new FancyWords()
 
 
 
