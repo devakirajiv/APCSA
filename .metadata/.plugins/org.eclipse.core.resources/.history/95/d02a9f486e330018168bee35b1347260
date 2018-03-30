@@ -23,7 +23,7 @@ public class QuickSort
 		if(low < high){
 			int split = partition(list, low, high);
 			quickSort(list, low, split);
-			System.out.println(Arrays.toString(list));
+			System.out.println("pass" + Arrays.toString(list));
 			quickSort(list, split + 1, high);
 		
 		}
