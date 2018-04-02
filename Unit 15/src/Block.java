@@ -17,15 +17,20 @@ public class Block implements Locatable {
 	private Color color;
 
 	public Block() {
-		xPos = 0;
-		yPos = 0;
-		width = 0;
-		height = 0;
-		color = null;
+		xPos = 100;
+		yPos = 150;
+		width = 10;
+		height = 10;
+		color = Color.BLACK;
 
 	}
 
 	// add other Block constructors - x , y , width, height, color
+	
+	public Block(int x, int y){
+		xPos = x;
+		yPos = y;
+	}
 
 	public Block(int x, int y, int wdt, int hgt, Color col) {
 		xPos = x;
@@ -34,6 +39,23 @@ public class Block implements Locatable {
 		height = hgt;
 		color = col;
 	}
+	
+	public Block(int x, int y, int wdt, int hgt) {
+		xPos = x;
+		yPos = y;
+		width = wdt;
+		height = hgt;
+		color = Color.BLACK;
+	}
+	
+	public Block(int x, int y, int wdt) {
+		xPos = x;
+		yPos = y;
+		width = wdt;
+		color = Color.BLACK;
+	}
+	
+	
 
 	// add the other set methods
 	public void setX(int x) {
@@ -69,14 +91,20 @@ public class Block implements Locatable {
 	}
 
 	public void draw(Graphics window, Color col) {
+		color = col;
+		window.setColor(color);
+		window.fillRect(getX(), getY(), getWidth(), getHeight());
+		
 
 	}
 
 	public boolean equals(Object obj) {
+		
+		Block new1 = (Block) obj;
 
-		if ((this.getColor() == ((Graphics) obj).getColor()) && (this.getX() == ((Locatable) obj).getX())
-				&& (this.getY() == ((Locatable) obj).getY()) && (this.getWidth() == ((Block) obj).getWidth())
-				&& (this.getHeight() == ((Block) obj).getHeight())) {
+		if ((this.getColor() == (new1.getColor()) && (this.getX() == new1.getX())
+				&& (this.getY() == new1.getY()) && (this.getWidth() == new1.getWidth())
+				&& (this.getHeight() == new1.getHeight()))) {
 
 			return true;
 
