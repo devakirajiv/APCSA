@@ -30,6 +30,9 @@ public class Block implements Locatable {
 	public Block(int x, int y){
 		xPos = x;
 		yPos = y;
+		color = Color.black;
+		width = 10;
+		height = 10;
 	}
 
 	public Block(int x, int y, int wdt, int hgt, Color col) {

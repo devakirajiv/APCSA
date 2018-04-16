@@ -21,7 +21,7 @@ class BallTestTwo extends Canvas implements Runnable
 		setVisible(true);
 
 		//instantiate a new Ball
-		Ball test = new Ball();
+		ball = new Ball(200,90,10,10,Color.BLUE);
 
 
 		//test the Ball thoroughly
@@ -44,12 +44,12 @@ class BallTestTwo extends Canvas implements Runnable
 
 		if(!(ball.getX()>=10 && ball.getX()<=550))
 		{
-			ball.setxSpeed(-ball.getxSpeed());
+			ball.setXSpeed(-ball.getxSpeed());
 		}
 
 		if(!(ball.getY()>=10 && ball.getY()<=450))
 		{
-			ball.setySpeed(-ball.getySpeed());
+			ball.setYSpeed(-ball.getySpeed());
 		}
 	}
 	
