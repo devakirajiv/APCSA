@@ -39,7 +39,16 @@ public class PictureTester
   public static void testCollage()
   {
     Picture canvas = new Picture("H:\\APCS\\Unit16\\pixLab\\images\\640x480.jpg");
+    canvas.explore();
     canvas.createCollage();
+    canvas.explore();
+  }
+  
+  public static void testMyCollage()
+  {
+    Picture canvas = new Picture("H:\\APCS\\Unit16\\pixLab\\images\\640x480.jpg");
+    canvas.explore();
+    canvas.myCollage();
     canvas.explore();
   }
   
@@ -47,6 +56,7 @@ public class PictureTester
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("H:\\APCS\\Unit16\\pixLab\\images\\swan.jpg");
+    swan.explore();
     swan.edgeDetection(10);
     swan.explore();
   }
@@ -57,6 +67,22 @@ public class PictureTester
 	  Picture beach = new Picture("H:\\APCS\\Unit16\\pixLab\\images\\beach.jpg");
 	    beach.explore();
 	    beach.keepOnlyBlue();
+	    beach.explore();
+  }
+  
+  public static void testKeepOnlyRed()
+  {
+	  Picture beach = new Picture("H:\\APCS\\Unit16\\pixLab\\images\\beach.jpg");
+	    beach.explore();
+	    beach.keepOnlyRed();
+	    beach.explore();
+  }
+  
+  public static void testKeepOnlyGreen()
+  {
+	  Picture beach = new Picture("H:\\APCS\\Unit16\\pixLab\\images\\beach.jpg");
+	    beach.explore();
+	    beach.keepOnlyGreen();
 	    beach.explore();
   }
   
@@ -77,6 +103,42 @@ public class PictureTester
 	    beach.grayscale();
 	    beach.explore();
   }
+  
+  /** Method to test mirrorArms */
+  public static void testMirrorArms()
+  {
+	  Picture snowman = new Picture("H:\\APCS\\Unit16\\pixLab\\images\\snowman.jpg");
+	    snowman.explore();
+	    snowman.mirrorArms();
+	    snowman.explore();
+  }
+  
+  public static void testMirrorGull()
+  {
+	  Picture seagull = new Picture("H:\\APCS\\Unit16\\pixLab\\images\\seagull.jpg");
+	  	seagull.explore();
+	  	seagull.mirrorGull();
+	  	seagull.explore();
+  }
+  
+  
+  public static void testMirrorHorizontal()
+  {
+	  Picture bike = new Picture("H:\\APCS\\Unit16\\pixLab\\images\\redMotorcycle.jpg");
+	  	bike.explore();
+	  	bike.mirrorHorizontal();
+	  	bike.explore();
+  }
+  
+  public static void testMirrorHorizontalBotTop()
+  {
+	  Picture bike = new Picture("H:\\APCS\\Unit16\\pixLab\\images\\redMotorcycle.jpg");
+	  	bike.explore();
+	  	bike.mirrorHorizontalBottomToTop();
+	  	bike.explore();
+  }
+  
+
  
   
   
@@ -95,20 +157,17 @@ public class PictureTester
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
+	//testMirrorHorizontalBotTop();
     //testMirrorVertical();
+	//testMirrorHorizontal();
     //testMirrorTemple();
     //testMirrorArms();
-    //testMirrorGull();
+    testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
+	//testMyCollage();
     //testCopy();
     //testEdgeDetection();
-    //testEdgeDetection2();
-    //testChromakey();
-    //testEncodeAndDecode();
-    //testGetCountRedOverValue(250);
-    //testSetRedToHalfValueInTopHalf();
-    //testClearBlueOverValue(200);
-    //testGetAverageForColumn(0);
+
   }
 }
