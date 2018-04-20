@@ -39,7 +39,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 
 		//instantiate other instance variables
 		//Ship, Alien
-		ship = new Ship(50,50,50,50,5);
+		ship = new Ship(50,50,50,50,10);
 	
 
 		this.addKeyListener(this);
@@ -77,21 +77,6 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		{
 			ship.move("LEFT");
 		}
-		
-		if(keys[1] == true)
-		{
-			ship.move("RIGHT");
-		}
-		
-		if(keys[2] == true)
-		{
-			ship.move("UP");
-		}
-		
-		if(keys[3] == true)
-		{
-			ship.move("DOWN");
-		}
 
 		//add code to move Ship, Alien, etc.
 
@@ -105,19 +90,19 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 
 	public void keyPressed(KeyEvent e)
 	{
-		if (e.getKeyCode() == KeyEvent.VK_H)
+		if (e.getKeyCode() == KeyEvent.VK_LEFT)
 		{
 			keys[0] = true;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_J)
+		if (e.getKeyCode() == KeyEvent.VK_RIGHT)
 		{
 			keys[1] = true;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_U)
+		if (e.getKeyCode() == KeyEvent.VK_UP)
 		{
 			keys[2] = true;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_N)
+		if (e.getKeyCode() == KeyEvent.VK_DOWN)
 		{
 			keys[3] = true;
 		}
@@ -130,19 +115,19 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 
 	public void keyReleased(KeyEvent e)
 	{
-		if (e.getKeyCode() == KeyEvent.VK_H)
+		if (e.getKeyCode() == KeyEvent.VK_LEFT)
 		{
 			keys[0] = false;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_J)
+		if (e.getKeyCode() == KeyEvent.VK_RIGHT)
 		{
 			keys[1] = false;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_U)
+		if (e.getKeyCode() == KeyEvent.VK_UP)
 		{
 			keys[2] = false;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_N)
+		if (e.getKeyCode() == KeyEvent.VK_DOWN)
 		{
 			keys[3] = false;
 		}
