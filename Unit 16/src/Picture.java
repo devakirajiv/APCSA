@@ -141,6 +141,7 @@ public class Picture extends SimplePicture
     }
   }
   
+  
   public void negate()
   {
     Pixel[][] pixels = this.getPixels2D();
@@ -251,6 +252,40 @@ public class Picture extends SimplePicture
         rightPixel.setColor(leftPixel.getColor());
       }
     }
+  }
+  
+  //SHARPEN
+  //One simple way to sharpen a specified pixel is to 
+  //add one-half of the difference between the current pixel and pixel located immediately above and to the left of the current pixel.  
+  //Limit the computed pixel value to 255 and 0 (i.e. if the pixel is >255 set it to 255 and if it’s <0 set it to 0).
+
+  public void sharpen(int x, int y, int w, int h){
+	  System.out.println("Devaki Rajiv\nPeriod 1\nApril 24 2018");
+	  Pixel[][] pixels = this.getPixels2D();
+	  for(int row = y; row < h; row++){
+		  for(int col = x; col < w; col++){
+			  pixels[row][col].setBlue(Math.abs((pixels[row-1][col-1].getBlue()-pixels[row][col].getBlue())/2) + pixels[row][col].getBlue());
+			  pixels[row][col].setGreen(Math.abs((pixels[row-1][col-1].getGreen()-pixels[row][col].getGreen())/2)+ pixels[row][col].getGreen());
+			  pixels[row][col].setRed(Math.abs((pixels[row-1][col-1].getRed()-pixels[row][col].getRed())/2)+ pixels[row][col].getRed());
+			  
+			  if(pixels[row][col].getBlue() > 255) 
+				  pixels[row][col].setBlue(255);
+			  if(pixels[row][col].getBlue() < 0) 
+				  pixels[row][col].setBlue(0);
+			  
+			  if(pixels[row][col].getGreen() > 255) 
+				  pixels[row][col].setGreen(255);
+			  if(pixels[row][col].getGreen() < 0) 
+				  pixels[row][col].setGreen(0);
+			 
+			  if(pixels[row][col].getRed() > 255) 
+				  pixels[row][col].setRed(255);
+			  if(pixels[row][col].getRed() < 0) 
+				  pixels[row][col].setRed(0);
+			
+		  }
+	  }
+	  
   }
   
 
