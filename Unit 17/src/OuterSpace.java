@@ -3,6 +3,22 @@
 //Date -
 //Class - 
 //Lab  -
+/**
+ * Returns an Image object that can then be painted on the screen. 
+ * The url argument must specify an absolute {@link URL}. The name
+ * argument is a specifier that is relative to the url argument. 
+ * <p>
+ * This method always returns immediately, whether or not the 
+ * image exists. When this applet attempts to draw the image on
+ * the screen, the data will be loaded. The graphics primitives 
+ * that draw the image will incrementally paint on the screen. 
+ *
+ * @param  url  an absolute URL giving the base location of the image
+ * @param  name the location of the image, relative to the url argument
+ * @return      the image at the specified URL
+ * @see         Image
+ */
+
 
 import java.awt.Color;
 import java.awt.Font;
@@ -21,9 +37,11 @@ import java.util.concurrent.TimeUnit;
 public class OuterSpace extends Canvas implements KeyListener, Runnable
 {
 	private Ship ship;
+	private int count = 1;
+	private Explosion block;
 
 
-	private AlienHorde aliens = new AlienHorde(5);
+	private AlienHorde aliens = new AlienHorde(count);
 	private Bullets ammo = new Bullets();
 
     
@@ -47,6 +65,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		//Ship, Alien
 
 		ship = new Ship(350, 500, 50, 50, 2);
+		block = new Explosion()
 		
 		this.addKeyListener(this);
 		new Thread(this).start();
@@ -84,6 +103,13 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		aliens.drawEmAll(graphToBack);
 		ammo.cleanEmUp(aliens.removeDeadOnes(ammo.getList()));
 		aliens.moveEmAll();
+		
+		
+		if(aliens.getList().size() == 0)
+		{
+			count*=2;
+			aliens = new AlienHorde(count);
+		}
 
 
 		
