@@ -77,7 +77,7 @@ public class Paddle extends Block
 
 		window.fillRect(getX(), getY(), getWidth(), getHeight());
 
-		// paddle moves vertically only
+	
 
 		setY(getY() - speed);
 
@@ -97,7 +97,7 @@ public class Paddle extends Block
 
 		window.fillRect(getX(), getY(), getWidth(), getHeight());
 
-		// paddle moves vertically only
+	
 
 		setY(getY() + speed);
 

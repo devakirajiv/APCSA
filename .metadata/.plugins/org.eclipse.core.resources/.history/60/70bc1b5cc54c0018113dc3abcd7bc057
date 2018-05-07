@@ -37,13 +37,12 @@ import java.util.concurrent.TimeUnit;
 public class OuterSpace extends Canvas implements KeyListener, Runnable
 {
 	private Ship ship;
-	private int level = 1;
-	
+	private int count = 1;
+	private Explosion block;
 
 
-	private AlienHorde aliens = new AlienHorde(level);
+	private AlienHorde aliens = new AlienHorde(count);
 	private Bullets ammo = new Bullets();
-	private Scoreboard scoreboard = new Scoreboard();
 
     
 	/* uncomment once you are ready for this part
@@ -66,7 +65,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		//Ship, Alien
 
 		ship = new Ship(350, 500, 50, 50, 2);
-	
+		block = new Explosion()
 		
 		this.addKeyListener(this);
 		new Thread(this).start();
@@ -105,15 +104,11 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		ammo.cleanEmUp(aliens.removeDeadOnes(ammo.getList()));
 		aliens.moveEmAll();
 		
-		scoreboard.draw(graphToBack);
-		
 		
 		if(aliens.getList().size() == 0)
 		{
-			level++;
-			aliens = new AlienHorde(level);
-			scoreboard.beatLevel(window);
-			aliens = new AlienHorde(level);
+			count*=2;
+			aliens = new AlienHorde(count);
 		}
 
 

@@ -16,6 +16,7 @@ public class AlienHorde
 {
 	private boolean left = true;
 	private boolean right = true;
+	private int[] thing = {1, 2, 3};
 	private ArrayList<Alien> aliens = new ArrayList<Alien>();
 
 	public AlienHorde(int size)
@@ -31,7 +32,7 @@ public class AlienHorde
 			}
 		}
 	}
-
+	
 	public void add(Alien al)
 	{
 		aliens.add(al);
@@ -104,8 +105,9 @@ public class AlienHorde
 		return null;
 	}
 	
-	
 
+	
+	
 	public String toString()
 	{
 		return "";

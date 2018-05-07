@@ -233,18 +233,6 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 				leftPaddle.moveUpAndDraw(graphToBack);
 
 		}
-		
-		if (leftPaddle.didCollideLeft(left) || leftPaddle.didCollideRight(right)) {
-
-			if (leftPaddle.didCollideLeft(left))
-
-				leftPaddle.moveRightAndDraw(graphToBack);
-
-			if (leftPaddle.didCollideRight(right))
-
-				leftPaddle.moveLeftAndDraw(graphToBack);
-
-		}
 
 
 

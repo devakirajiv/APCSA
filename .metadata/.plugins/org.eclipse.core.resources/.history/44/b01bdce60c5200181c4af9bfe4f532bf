@@ -108,6 +108,7 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 
 		ball.moveAndDraw(graphToBack);
 		leftPaddle.draw(graphToBack);
+		rightPaddle.draw(graphToBack);
 		left.draw(graphToBack);
 		right.draw(graphToBack);
 		top.draw(graphToBack);
@@ -176,7 +177,7 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 
 			// move right paddle up and draw it on the window
 
-			leftPaddle.moveLeftAndDraw(graphToBack);
+			rightPaddle.moveLeftAndDraw(graphToBack);
 
 		}
 
@@ -186,7 +187,7 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 
 			// move right paddle down and draw it on the window
 
-			leftPaddle.moveRightAndDraw(graphToBack);
+			rightPaddle.moveRightAndDraw(graphToBack);
 
 		}
 
@@ -208,9 +209,16 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 
 		// }
 
+		// see if the ball hits the right paddle
 
+		if (((ball.getX() + ball.getWidth() >= rightPaddle.getX() - Math.abs(ball.getxSpeed()))
+				&& (ball.getY() >= rightPaddle.getY()) && ball.getY() <= rightPaddle.getY() + rightPaddle.getHeight())) {
+			if (ball.getX() >= rightPaddle.getX() + Math.abs(ball.getxSpeed()))
+				ball.setYSpeed(-ball.getySpeed());
+			else
+				ball.setXSpeed(-ball.getxSpeed());
 
-
+		}
 
 		// if (ball.didCollideRight(rightPaddle)) {
 
@@ -233,20 +241,18 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 				leftPaddle.moveUpAndDraw(graphToBack);
 
 		}
-		
-		if (leftPaddle.didCollideLeft(left) || leftPaddle.didCollideRight(right)) {
 
-			if (leftPaddle.didCollideLeft(left))
+		if (rightPaddle.didCollideTop(top) || rightPaddle.didCollideBottom(bottom)) {
 
-				leftPaddle.moveRightAndDraw(graphToBack);
+			if (rightPaddle.didCollideTop(top))
 
-			if (leftPaddle.didCollideRight(right))
+				rightPaddle.moveDownAndDraw(graphToBack);
 
-				leftPaddle.moveLeftAndDraw(graphToBack);
+			if (rightPaddle.didCollideBottom(bottom))
+
+				rightPaddle.moveUpAndDraw(graphToBack);
 
 		}
-
-
 
 		twoDGraph.drawImage(back, null, 0, 0);
 
@@ -260,19 +266,19 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 
 		{
 
-		case 'U':
+		case 'W':
 			keys[0] = true;
 			break;
 
-		case 'N':
+		case 'Z':
 			keys[1] = true;
 			break;
 
-		case 'H':
+		case 'I':
 			keys[2] = true;
 			break;
 
-		case 'J':
+		case 'M':
 			keys[3] = true;
 			break;
 
@@ -288,19 +294,19 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 
 		{
 
-		case 'U':
+		case 'W':
 			keys[0] = false;
 			break;
 
-		case 'N':
+		case 'Z':
 			keys[1] = false;
 			break;
 
-		case 'H':
+		case 'I':
 			keys[2] = false;
 			break;
 
-		case 'J':
+		case 'M':
 			keys[3] = false;
 			break;
 
