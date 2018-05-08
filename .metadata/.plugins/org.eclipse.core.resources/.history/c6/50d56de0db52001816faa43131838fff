@@ -121,7 +121,7 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 
 		{
 
-			if (!(ball.getX() >= 770)){//left.getX() + left.getWidth())) {
+			if (!(ball.getX() >= 800)){//left.getX() + left.getWidth())) {
 				ball.setXSpeed(-ball.getxSpeed());
 				ball.setYSpeed(ball.getySpeed());
 			}

@@ -152,8 +152,6 @@ public class PictureTester
 	  Picture beach = new Picture("H:\\APCS\\Unit16\\pixLab\\images\\beach.jpg");
 	  beach.explore();
 	  beach.encode(message);
-	  beach.explore();
-
 	  
 	  
   }
@@ -183,14 +181,13 @@ public class PictureTester
 	//testMirrorHorizontal();
     //testMirrorTemple();
     //testMirrorArms();
-	//testSharpen(50,50,500,400);
+	  testSharpen(50,50,500,400);
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
 	//testMyCollage();
     //testCopy();
     //testEdgeDetection();
-	  testEncodeDecode();
 
   }
 }

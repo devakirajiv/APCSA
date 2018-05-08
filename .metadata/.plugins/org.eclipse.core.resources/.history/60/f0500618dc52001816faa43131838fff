@@ -116,7 +116,7 @@ public class Ball extends Block {
 
 		Wall n = (Wall) obj;
 
-		if (getY() >= 550)//n.getY() - n.getHeight())
+		if (getY() >= 700)//n.getY() - n.getHeight())
 
 			return true;
 
