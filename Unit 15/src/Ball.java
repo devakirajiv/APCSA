@@ -130,7 +130,7 @@ public class Ball extends Block {
 
 		Wall n = (Wall) obj;
 
-		if (getX() <= n.getX() + n.getWidth())
+		if (getX() <= 0)//n.getX() + n.getWidth())
 
 			return true;
 
@@ -144,7 +144,7 @@ public class Ball extends Block {
 
 		Wall n = (Wall) obj;
 
-		if (getX() >= n.getX() - n.getWidth())
+		if (getX() >= 770)//n.getX() - n.getWidth())
 
 			return true;
 

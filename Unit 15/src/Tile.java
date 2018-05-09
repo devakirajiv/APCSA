@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Graphics;
 
 public class Tile extends Block
 {
@@ -7,5 +8,7 @@ public class Tile extends Block
 	{
 		super(x,y,wdt,hgt,col);
 	}
+	
+
 
 }
