@@ -151,7 +151,7 @@ public class Paddle extends Block
 
 	public boolean didCollideTop(Object obj) {
 
-		Wall n = (Wall) obj;
+		Tile n = (Tile) obj;
 
 		if (getY() <= n.getY() + n.getHeight())
 
@@ -165,7 +165,7 @@ public class Paddle extends Block
 
 	public boolean didCollideBottom(Object obj) {
 
-		Wall n = (Wall) obj;
+		Tile n = (Tile) obj;
 
 		if (getY() >= n.getY() - n.getHeight())
 
@@ -179,7 +179,7 @@ public class Paddle extends Block
 
 	public boolean didCollideLeft(Object obj) {
 
-		Wall n = (Wall) obj;
+		Tile n = (Tile) obj;
 
 		if (getX() <= n.getX() + n.getWidth())
 
@@ -193,7 +193,7 @@ public class Paddle extends Block
 
 	public boolean didCollideRight(Object obj) {
 
-		Wall n = (Wall) obj;
+		Tile n = (Tile) obj;
 
 		if (getX() >= n.getX() - n.getWidth())
 

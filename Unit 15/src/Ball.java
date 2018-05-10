@@ -102,7 +102,7 @@ public class Ball extends Block {
 
 		Wall n = (Wall) obj;
 
-		if (getY() <= 0)//n.getY() + n.getHeight())
+		if (getY() <= n.getY() + n.getHeight())
 
 			return true;
 
@@ -116,7 +116,7 @@ public class Ball extends Block {
 
 		Wall n = (Wall) obj;
 
-		if (getY() >= 550)//n.getY() - n.getHeight())
+		if (getY() >= n.getY() - n.getHeight())
 
 			return true;
 
@@ -130,7 +130,7 @@ public class Ball extends Block {
 
 		Wall n = (Wall) obj;
 
-		if (getX() <= 0)//n.getX() + n.getWidth())
+		if (getX() <= n.getX() + n.getWidth())
 
 			return true;
 
@@ -144,7 +144,64 @@ public class Ball extends Block {
 
 		Wall n = (Wall) obj;
 
-		if (getX() >= 770)//n.getX() - n.getWidth())
+		if (getX() >= n.getX() - n.getWidth())
+
+			return true;
+
+		else
+
+			return false;
+
+	}
+	
+	
+	public boolean didCollideTileTop(Object obj) {
+
+		Tile n = (Tile) obj;
+
+		if (getY() <= n.getY() + n.getHeight())
+
+			return true;
+
+		else
+
+			return false;
+
+	}
+
+	public boolean didCollideTileBottom(Object obj) {
+
+		Tile n = (Tile) obj;
+
+		if (getY() >= n.getY() - n.getHeight())
+
+			return true;
+
+		else
+
+			return false;
+
+	}
+
+	public boolean didCollideTileLeft(Object obj) {
+
+		Tile n = (Tile) obj;
+
+		if (getX() <= n.getX() + n.getWidth())
+
+			return true;
+
+		else
+
+			return false;
+
+	}
+
+	public boolean didCollideTileRight(Object obj) {
+
+		Tile n = (Tile) obj;
+
+		if (getX() >= n.getX() - n.getWidth())
 
 			return true;
 

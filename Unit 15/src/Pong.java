@@ -81,7 +81,7 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 
 		ball = new Ball(100, 100, 10, 10, Color.BLUE, 2, 2);
 
-		leftPaddle = new Paddle(100, 100, 40, 40, Color.gray, 5);
+		leftPaddle = new Paddle(200, 200, 40, 40, Color.gray, 5);
 
 		left = new Wall(0, 0, 10, 600);
 
@@ -174,9 +174,67 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 			}
 
 		}
+		
+		//see if the ball is colliding with above or below tiles
+		
+		for(Tile one: above){
+			if (ball.didCollideTileTop(one)) 
 
+			{
+				one.setColor(Color.white);
+				one.draw(graphToBack);
+				above.remove(one);
+				ball.setYSpeed(-ball.getySpeed());
+			}			
+			
+		}
+
+		for(Tile one: below){
+			if (ball.didCollideTileBottom(one)) 
+
+			{
+				one.setColor(Color.white);
+				one.draw(graphToBack);
+				below.remove(one);
+				ball.setYSpeed(-ball.getySpeed());
+			}			
+			
+		}
+
+		//see if the ball is colliding with left or right tiles
+
+		for(Tile one: leftside){
+			if (ball.didCollideTileLeft(one))
+
+			{
+				one.setColor(Color.white);
+				one.draw(graphToBack);
+				leftside.remove(one);
+				ball.setXSpeed(-ball.getxSpeed());
+			}			
+			
+		}
+
+		for(Tile one: rightside){
+			if (ball.didCollideTileRight(one))
+
+			{
+				one.setColor(Color.white);
+				one.draw(graphToBack);
+				rightside.remove(one);
+				ball.setXSpeed(-ball.getxSpeed());
+			}			
+			
+		}
+
+		
+		
+		
+		
+		
+		
 		// see if the ball hits the top or bottom wall
-
+				
 		if (ball.didCollideBottom(bottom) || ball.didCollideTop(top))
 
 		{
@@ -184,6 +242,7 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 			ball.setYSpeed(-ball.getySpeed());
 
 		}
+		
 
 		if (keys[0] == true)
 
@@ -224,62 +283,44 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 			leftPaddle.moveRightAndDraw(graphToBack);
 
 		}
-/**
+
 		// see if the ball hits the left paddle (right side of paddle)
-		if (((ball.getX() <= leftPaddle.getX() + leftPaddle.getWidth() + Math.abs(ball.getxSpeed()))
+		
+		if (((ball.getX() <= leftPaddle.getX() + leftPaddle.getWidth() + Math.abs(ball.getxSpeed()))&&(ball.getX()> leftPaddle.getX() - 3)
 				&& (ball.getY() >= leftPaddle.getY()) && ball.getY() <= leftPaddle.getY() + leftPaddle.getHeight())) {
 			if (ball.getX() <= leftPaddle.getX() + leftPaddle.getWidth() - Math.abs(ball.getxSpeed()))
 				ball.setYSpeed(-ball.getySpeed());
 			else
 				ball.setXSpeed(-ball.getxSpeed());
 
-		}
+			} 
+		
+		
+		
+		
+
 		
 		// see if the ball hits left side of paddle
-		
-		if (((ball.getX() + ball.getWidth() >= leftPaddle.getX() - Math.abs(ball.getxSpeed()))
+
+		if (((ball.getX() + ball.getWidth() >= leftPaddle.getX() - Math.abs(ball.getxSpeed())) &&(ball.getX()<leftPaddle.getX() + 3)
 								&& (ball.getY() >= leftPaddle.getY()) && ball.getY() <= leftPaddle.getY() + leftPaddle.getHeight())) {
 							if (ball.getX() >= leftPaddle.getX() + Math.abs(ball.getxSpeed()))
 								ball.setYSpeed(-ball.getySpeed());
 							else
 								ball.setXSpeed(-ball.getxSpeed());
+								
 			
 						}
-						*/
+		
+						
 
 	
-
-		// see if the paddles need to be moved
-
-		if (leftPaddle.didCollideTop(top) || leftPaddle.didCollideBottom(bottom)) {
-
-			if (leftPaddle.didCollideTop(top))
-
-				leftPaddle.moveDownAndDraw(graphToBack);
-
-			if (leftPaddle.didCollideBottom(bottom))
-
-				leftPaddle.moveUpAndDraw(graphToBack);
-
-		}
-		
-		if (leftPaddle.didCollideLeft(left) || leftPaddle.didCollideRight(right)) {
-
-			if (leftPaddle.didCollideLeft(left))
-
-				leftPaddle.moveRightAndDraw(graphToBack);
-
-			if (leftPaddle.didCollideRight(right))
-
-				leftPaddle.moveLeftAndDraw(graphToBack);
-
-		}
-
 
 
 		twoDGraph.drawImage(back, null, 0, 0);
 
 	}
+	
 
 	public void keyPressed(KeyEvent e)
 
@@ -368,7 +409,7 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 
 	@Override
 	public boolean didCollideLeft(Object obj) {
-		Wall n = (Wall) obj;
+		Tile n = (Tile) obj;
 
 		if (getX() <= n.getX() + n.getWidth())
 
@@ -382,7 +423,7 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 
 	@Override
 	public boolean didCollideRight(Object obj) {
-		Wall n = (Wall) obj;
+		Tile n = (Tile) obj;
 
 		if (getX() >= n.getX() - n.getWidth())
 
@@ -395,7 +436,7 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 
 	@Override
 	public boolean didCollideTop(Object obj) {
-		Wall n = (Wall) obj;
+		Tile n = (Tile) obj;
 
 		if (getY() <= n.getY() + n.getHeight())
 
@@ -409,7 +450,7 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 
 	@Override
 	public boolean didCollideBottom(Object obj) {
-		Wall n = (Wall) obj;
+		Tile n = (Tile) obj;
 
 		if (getY() >= n.getY() - n.getHeight())
 
