@@ -153,62 +153,66 @@ public class Ball extends Block {
 			return false;
 
 	}
-	
-	
+
+
+
 	public boolean didCollideTileTop(Object obj) {
 
-		Tile n = (Tile) obj;
+		Tile tile = (Tile) obj;
 
-		if (getY() <= n.getY() + n.getHeight())
-
+		if ((this.getY() <= tile.getY() + tile.getHeight() - this.getySpeed()
+				&& this.getY() >= tile.getY() + this.getySpeed()) && this.getX() >= tile.getX()
+				&& this.getX() + this.getWidth() <= tile.getX() + tile.getWidth() && this.getySpeed() < 0) {
 			return true;
-
-		else
-
-			return false;
+		}
+		return false;
 
 	}
 
 	public boolean didCollideTileBottom(Object obj) {
 
-		Tile n = (Tile) obj;
+		Tile tile = (Tile) obj;
 
-		if (getY() >= n.getY() - n.getHeight())
 
+		if((this.getY()+this.getHeight()>=tile.getY()-this.getySpeed() && this.getY()+this.getHeight()<=tile.getY()+this.getySpeed()+5)
+				&& this.getX()>=tile.getX() && this.getX()+this.getWidth()<=tile.getX()+tile.getWidth()
+				&& this.getySpeed() > 0){
 			return true;
+		}
+		return false;
 
-		else
-
-			return false;
 
 	}
 
 	public boolean didCollideTileLeft(Object obj) {
 
-		Tile n = (Tile) obj;
+		Tile tile = (Tile) obj;
 
-		if (getX() <= n.getX() + n.getWidth())
+		if (this.getX() <= tile.getX() + tile.getWidth() - this.getxSpeed()
+				&& this.getX() >= tile.getX() + tile.getWidth() + this.getxSpeed() - 5
+				&& this.getY() + this.getHeight() >= tile.getY()
+				&& this.getY() <= tile.getY() + tile.getHeight()
+				&& this.getxSpeed() < 0) {
 
 			return true;
 
-		else
+		}
 
-			return false;
+		return false;
 
 	}
 
 	public boolean didCollideTileRight(Object obj) {
 
-		Tile n = (Tile) obj;
+		Tile tile = (Tile) obj;
 
-		if (getX() >= n.getX() - n.getWidth())
-
+		if (this.getX() + this.getWidth() >= tile.getX() - this.getxSpeed()
+				&& this.getX() + this.getWidth() <= tile.getX() + this.getxSpeed() + 5
+				&& this.getY() + this.getHeight() >= tile.getY() && this.getY() <= tile.getY() + tile.getHeight()
+				&& this.getxSpeed() > 0) {
 			return true;
-
-		else
-
-			return false;
-
+		}
+		return false;
 	}
 
 	public boolean equals(Object obj) {

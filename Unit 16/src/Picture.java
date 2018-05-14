@@ -116,7 +116,7 @@ public class Picture extends SimplePicture {
 				}
 
 				messagePixel = messagePixels[row][col];
-				if (messagePixel.colorDistance(Color.BLACK) < 50) {
+				if (messagePixel.getColor()==(Color.BLACK)) {
 					currPixel.setBlue(currPixel.getBlue() + 1);
 					currPixel.setRed(currPixel.getRed() + 1);
 					currPixel.setGreen(currPixel.getGreen() + 1);

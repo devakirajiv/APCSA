@@ -178,50 +178,75 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 		//see if the ball is colliding with above or below tiles
 		
 		for(Tile one: above){
-			if (ball.didCollideTileTop(one)) 
-
-			{
-				one.setColor(Color.white);
-				one.draw(graphToBack);
-				above.remove(one);
-				ball.setYSpeed(-ball.getySpeed());
-			}			
 			
-		}
-
-		for(Tile one: below){
-			if (ball.didCollideTileBottom(one)) 
-
+			if (ball.didCollideTileBottom(one)||ball.didCollideTileTop(one)) 
 			{
 				one.setColor(Color.white);
 				one.draw(graphToBack);
 				below.remove(one);
 				ball.setYSpeed(-ball.getySpeed());
-			}			
+			}	
+			else if (ball.didCollideTileLeft(one)||ball.didCollideTileRight(one)) 
+			{
+				one.setColor(Color.white);
+				one.draw(graphToBack);
+				below.remove(one);
+				ball.setXSpeed(-ball.getxSpeed());
+			}	
+			
+		}
+
+		for(Tile one: below){
+			if (ball.didCollideTileBottom(one)||ball.didCollideTileTop(one)) 
+			{
+				one.setColor(Color.white);
+				one.draw(graphToBack);
+				below.remove(one);
+				ball.setYSpeed(-ball.getySpeed());
+			}	
+			else if (ball.didCollideTileLeft(one)||ball.didCollideTileRight(one)) 
+			{
+				one.setColor(Color.white);
+				one.draw(graphToBack);
+				below.remove(one);
+				ball.setXSpeed(-ball.getxSpeed());
+			}		
 			
 		}
 
 		//see if the ball is colliding with left or right tiles
 
 		for(Tile one: leftside){
-			if (ball.didCollideTileLeft(one))
-
+			if (ball.didCollideTileBottom(one)||ball.didCollideTileTop(one)) 
 			{
 				one.setColor(Color.white);
 				one.draw(graphToBack);
-				leftside.remove(one);
+				below.remove(one);
+				ball.setYSpeed(-ball.getySpeed());
+			}	
+			else if (ball.didCollideTileLeft(one)||ball.didCollideTileRight(one)) 
+			{
+				one.setColor(Color.white);
+				one.draw(graphToBack);
+				below.remove(one);
 				ball.setXSpeed(-ball.getxSpeed());
 			}			
 			
 		}
 
 		for(Tile one: rightside){
-			if (ball.didCollideTileRight(one))
-
+			if (ball.didCollideTileBottom(one)||ball.didCollideTileTop(one)) 
 			{
 				one.setColor(Color.white);
 				one.draw(graphToBack);
-				rightside.remove(one);
+				below.remove(one);
+				ball.setYSpeed(-ball.getySpeed());
+			}	
+			else if (ball.didCollideTileLeft(one)||ball.didCollideTileRight(one)) 
+			{
+				one.setColor(Color.white);
+				one.draw(graphToBack);
+				below.remove(one);
 				ball.setXSpeed(-ball.getxSpeed());
 			}			
 			
