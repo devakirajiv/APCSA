@@ -152,7 +152,7 @@ public class PictureTester
 	  Picture beach = new Picture("H:\\APCS\\Unit16\\pixLab\\images\\beach.jpg");
 	  beach.explore();
 	  beach.encode(message);
-	  beach.explore();
+	 // beach.explore();
 	  
 	  
 	  

@@ -105,9 +105,7 @@ public class Picture extends SimplePicture {
 		for (int row = 0; row < this.getHeight(); row++) {
 			for (int col = 0; col < this.getWidth(); col++) {
 				currPixel = currPixels[row][col];
-				/*
-				while (currPixel.getBlue() % 10 != 0) 
-				{
+				while (currPixel.getBlue() % 10 != 0) {
 					currPixel.setBlue(currPixel.getBlue() + 1);
 				}
 				while (currPixel.getRed() % 10 != 0) {
@@ -116,22 +114,7 @@ public class Picture extends SimplePicture {
 				while (currPixel.getGreen() % 10 != 0) {
 					currPixel.setGreen(currPixel.getGreen() + 1);
 				}
-				*/
-				if (currPixel.getBlue() % 10 != 0)
-				{
-					int addIt = currPixel.getBlue() % 10;
-					currPixel.setBlue(currPixel.getBlue() + (10 - addIt));
-				}
-				if (currPixel.getGreen() % 10 != 0)
-				{
-					int addIt = currPixel.getGreen() % 10;
-					currPixel.setGreen(currPixel.getGreen() + (10 - addIt));
-				}
-				if (currPixel.getRed() % 10 != 0)
-				{
-					int addIt = currPixel.getRed() % 10;
-					currPixel.setRed(currPixel.getRed() + (10 - addIt));
-				}
+
 				messagePixel = messagePixels[row][col];
 				if (messagePixel.getColor()==(Color.BLACK)) {
 					currPixel.setBlue(currPixel.getBlue() + 1);
