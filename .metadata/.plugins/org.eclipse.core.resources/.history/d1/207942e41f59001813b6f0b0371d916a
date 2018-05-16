@@ -153,9 +153,8 @@ public class PictureTester
 	  //beach.explore();
 	  beach.encode(message);
 	  beach.explore();
-	  message.explore();
-	  //beach.decode();
-	  //beach.explore();
+	  beach.decode();
+	  beach.explore();
 	  
 	  
 	  

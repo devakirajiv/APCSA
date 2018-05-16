@@ -92,7 +92,7 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 			allTiles.add(rightside.get(i));
 		}
 
-		ball = new Ball(300, 300, 10, 10, Color.black, 2, 2);
+		ball = new Ball(100, 100, 10, 10, Color.BLUE, 2, 2);
 
 		leftPaddle = new Paddle(200, 200, 40, 40, Color.gray, 5);
 
@@ -274,40 +274,6 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 		
 		*/
 		
-		if(ball.didCollideTileBottom(allTiles.get(0))){
-			allTiles.get(0).setColor(Color.white);
-			allTiles.get(0).draw(graphToBack);
-			ball.setYSpeed(-ball.getySpeed());
-			allTiles.remove(allTiles.get(0));
-		}
-		
-		
-		for(int i = 0; i < allTiles.size(); i++){
-			if(ball.didCollideTileRight(allTiles.get(i))){
-				allTiles.get(i).setColor(Color.white);
-				allTiles.get(i).draw(graphToBack);
-				ball.setXSpeed(-ball.getxSpeed());
-				allTiles.remove(allTiles.get(i));
-			} else
-				if(ball.didCollideTileLeft(allTiles.get(i))){
-					allTiles.get(i).setColor(Color.white);
-					allTiles.get(i).draw(graphToBack);
-					ball.setXSpeed(-ball.getxSpeed());
-					allTiles.remove(allTiles.get(i));
-				} else
-					if(ball.didCollideTileBottom(allTiles.get(i))){
-						allTiles.get(i).setColor(Color.white);
-						allTiles.get(i).draw(graphToBack);
-						ball.setYSpeed(-ball.getySpeed());
-						allTiles.remove(allTiles.get(i));
-					}else
-						if(ball.didCollideTileTop(allTiles.get(i))){
-							allTiles.get(i).setColor(Color.white);
-							allTiles.get(i).draw(graphToBack);
-							ball.setYSpeed(-ball.getySpeed());
-							allTiles.remove(allTiles.get(i));
-						}
-		}
 
 		
 		
@@ -367,7 +333,7 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 
 		// see if the ball hits the left paddle (right side of paddle)
 		
-		if (((ball.getX() <= leftPaddle.getX() + leftPaddle.getWidth() + Math.abs(ball.getxSpeed()))&&(ball.getX()> leftPaddle.getX())
+		if (((ball.getX() <= leftPaddle.getX() + leftPaddle.getWidth() + Math.abs(ball.getxSpeed()))&&(ball.getX()> leftPaddle.getX() - 3)
 				&& (ball.getY() >= leftPaddle.getY()) && ball.getY() <= leftPaddle.getY() + leftPaddle.getHeight())) {
 			if (ball.getX() <= leftPaddle.getX() + leftPaddle.getWidth() - Math.abs(ball.getxSpeed()))
 				ball.setYSpeed(-ball.getySpeed());
@@ -383,7 +349,7 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 		
 		// see if the ball hits left side of paddle
 
-		if (((ball.getX() + ball.getWidth() >= leftPaddle.getX() - Math.abs(ball.getxSpeed())) &&(ball.getX()<leftPaddle.getX())
+		if (((ball.getX() + ball.getWidth() >= leftPaddle.getX() - Math.abs(ball.getxSpeed())) &&(ball.getX()<leftPaddle.getX() + 3)
 								&& (ball.getY() >= leftPaddle.getY()) && ball.getY() <= leftPaddle.getY() + leftPaddle.getHeight())) {
 							if (ball.getX() >= leftPaddle.getX() + Math.abs(ball.getxSpeed()))
 								ball.setYSpeed(-ball.getySpeed());
@@ -393,23 +359,7 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 			
 						}
 		
-		if(allTiles.size() <= 20){
-			for(int i = 0; i < above.size(); i++){
-				allTiles.add(above.get(i));
-				allTiles.add(below.get(i));
-			}
-			
-			for(int i = 0; i < leftside.size(); i++){
-				allTiles.add(leftside.get(i));
-				allTiles.add(rightside.get(i));
-			}
-			
-			for(Tile one: allTiles){
-				one.setColor(Color.pink);
-				one.draw(graphToBack);
-			}
-			
-		}
+						
 
 	
 

@@ -301,7 +301,7 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 						ball.setYSpeed(-ball.getySpeed());
 						allTiles.remove(allTiles.get(i));
 					}else
-						if(ball.didCollideTileTop(allTiles.get(i))){
+						if(ball.didCollideTileBottom(allTiles.get(i))){
 							allTiles.get(i).setColor(Color.white);
 							allTiles.get(i).draw(graphToBack);
 							ball.setYSpeed(-ball.getySpeed());
@@ -393,7 +393,7 @@ public class Pong extends Canvas implements KeyListener, Runnable, Collidable
 			
 						}
 		
-		if(allTiles.size() <= 20){
+		if(allTiles.size() == 20){
 			for(int i = 0; i < above.size(); i++){
 				allTiles.add(above.get(i));
 				allTiles.add(below.get(i));

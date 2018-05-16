@@ -160,14 +160,13 @@ public class Ball extends Block {
 
 		Tile tile = (Tile) obj;
 
-		if ((this.getY() <= tile.getY() + tile.getHeight() - this.getySpeed() 
+		if ((this.getY() <= tile.getY() + tile.getHeight() - this.getySpeed()
 				&& this.getY() >= tile.getY() + this.getySpeed()) 
 				&& this.getX() >= tile.getX()
 				&& this.getX() + this.getWidth() <= tile.getX() + tile.getWidth() 
 				&& this.getySpeed() < 0) {
 			return true;
 		}
-		
 		return false;
 
 	}
@@ -177,8 +176,8 @@ public class Ball extends Block {
 		Tile tile = (Tile) obj;
 
 
-		if((this.getY()+this.getHeight()>=tile.getY()-this.getySpeed()
-				&& this.getY()+this.getHeight()<=tile.getY()+this.getySpeed())
+		if((this.getY()+this.getHeight()>=tile.getY()-this.getySpeed() 
+				&& this.getY()+this.getHeight()<=tile.getY()+this.getySpeed()+5)
 				&& this.getX()>=tile.getX() 
 				&& this.getX()+this.getWidth()<=tile.getX()+tile.getWidth()
 				&& this.getySpeed() > 0){

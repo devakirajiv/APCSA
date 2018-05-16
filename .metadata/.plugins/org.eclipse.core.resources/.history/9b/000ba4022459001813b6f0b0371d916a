@@ -160,7 +160,7 @@ public class Ball extends Block {
 
 		Tile tile = (Tile) obj;
 
-		if ((this.getY() <= tile.getY() + tile.getHeight() - this.getySpeed() 
+		if ((this.getY() <= tile.getY() + tile.getHeight() - this.getySpeed() - 90
 				&& this.getY() >= tile.getY() + this.getySpeed()) 
 				&& this.getX() >= tile.getX()
 				&& this.getX() + this.getWidth() <= tile.getX() + tile.getWidth() 
