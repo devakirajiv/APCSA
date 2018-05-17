@@ -154,9 +154,9 @@ public class PictureTester
 	  beach.explore();
 	  beach.encode(apple);
 	  beach.explore();
-	  //apple.explore();
-	  beach.decode();
-	  beach.explore();
+	  apple.explore();
+	  //beach.decode();
+	  //beach.explore();
 	  
 	  
 	  

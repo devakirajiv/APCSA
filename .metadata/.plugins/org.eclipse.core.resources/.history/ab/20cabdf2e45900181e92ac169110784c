@@ -146,7 +146,7 @@ public class Picture extends SimplePicture {
 				currPixel = pixels[row][col];
 				messagePixel = messagePixels[row][col];
 				if((currPixel.getBlue()+currPixel.getRed()+currPixel.getGreen())%10 == 3)
-					currPixel.setColor(Color.black);//messagePixel.setColor(Color.black);
+					messagePixel.setColor(Color.black);
 
 			}
 		}

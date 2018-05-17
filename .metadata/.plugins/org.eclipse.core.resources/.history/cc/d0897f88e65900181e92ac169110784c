@@ -150,13 +150,14 @@ public class PictureTester
   public static void testEncodeDecode(){
 	  Picture message = new Picture("H:\\APCS\\Unit16\\pixLab\\images\\msg.jpg");
 	  Picture beach = new Picture("H:\\APCS\\Unit16\\pixLab\\images\\beach.jpg");
-	  Picture apple = new Picture("H:\\APCS\\Unit16\\pixLab\\images\\apple.jpg");
+	  Picture apple = new Picture("H:\\APCS\\Unit16\\pixLab\\images\\apple"
+	  		+ ".jpg");
 	  beach.explore();
 	  beach.encode(apple);
 	  beach.explore();
-	  //apple.explore();
-	  beach.decode();
-	  beach.explore();
+	  message.explore();
+	  //beach.decode();
+	  //beach.explore();
 	  
 	  
 	  
